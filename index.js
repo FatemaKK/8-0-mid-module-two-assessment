@@ -174,7 +174,15 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, number) {
     ];
  */
 
-function getRottenTomatoesScoreByMovie() {}
+function getRottenTomatoesScoreByMovie(movies) {
+  if(!movies.length)
+  throw "There are no movies."
+  return movies.map((movie) => {
+    let objOfMovies = {};
+    return objOfMovies = {[movie.title] : movie.ratings.value};
+  });
+  return objOfMovies;
+}
 
 
 // Do not change anything below this line.
