@@ -141,9 +141,13 @@ function filterByGenre(movies, category) {
       }
     ];
  */
-
-function getAllMoviesReleasedAtOrBeforeYear() {}
-
+   
+function getAllMoviesReleasedAtOrBeforeYear(movies, number) {
+  if(!movies.length)
+  throw "There are no movies."
+    const releasedMovies = movies.filter((movie) => movie.released.split(" ")[2] <= number)
+  return releasedMovies;
+}
 
 /**
  * getRottenTomatoesScoreByMovie()
