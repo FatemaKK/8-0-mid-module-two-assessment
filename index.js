@@ -63,8 +63,6 @@ function checkIfAnyMovieHasRating(movies, type){
   return  movies.some((movie) => movie.rated === type);
 }
 
-
-
 /**
  * findById()
  * -----------------------------
@@ -82,7 +80,12 @@ function checkIfAnyMovieHasRating(movies, type){
     };
  */
 
-function findById() {}
+function findById(movies, id) {
+  if(!movies.length)
+  throw "There are no movies."
+    const foundMovie = movies.find((movie) => movie.imdbID === id);
+  return foundMovie || null;
+}
 
 /**
  * filterByGenre()
