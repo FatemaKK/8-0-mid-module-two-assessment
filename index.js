@@ -110,7 +110,12 @@ function findById(movies, id) {
  *  //> []
  */
     
-function filterByGenre() {}  
+function filterByGenre(movies, category) {
+  if(!movies.length)
+  throw "There are no movies."
+    const filteredMovie = movies.filter(movie => movie.genre.toLowerCase().indexOf(category.toLowerCase()) !== -1);
+  return filteredMovie;
+}  
   
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
